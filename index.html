@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI SIGNAL — 人工智能资讯雷达</title>
+  <meta name="description" content="精选、核验并提炼全球 AI 重要动态。" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23000'/%3E%3Cpath d='M8 22 14 8h4l6 14h-4l-1.1-3H13l-1.1 3H8Zm6.1-6h3.8L16 11l-1.9 5Z' fill='white'/%3E%3C/svg%3E" />
+  <style>
+    :root{--bg:#f3f3f1;--ink:#0a0a0a;--muted:#6f6f6b;--line:#cfcfca;--paper:#fff;--accent:#000}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,"Helvetica Neue","PingFang SC","Microsoft YaHei",sans-serif}
+    a{color:inherit} button{font:inherit} .shell{max-width:1440px;margin:auto;padding:0 34px 64px}
+    header{display:flex;align-items:center;justify-content:space-between;height:84px;border-bottom:1px solid var(--ink)}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.04em;font-size:1.28rem}.mark{width:12px;height:12px;background:#000;transform:rotate(45deg)}
+    .header-meta{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+    .masthead{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.65fr);gap:48px;padding:66px 0 56px;border-bottom:1px solid var(--ink)}
+    h1{font-size:clamp(4rem,10vw,9.2rem);line-height:.82;letter-spacing:-.085em;margin:0;font-weight:800}.cn{display:block;font-size:.22em;letter-spacing:.06em;margin-top:28px;font-weight:500}
+    .intro{align-self:end}.intro p{font-family:Georgia,"Songti SC",serif;font-size:1.18rem;line-height:1.65;margin:0 0 28px}.status{display:flex;align-items:center;gap:10px;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}.pulse{width:8px;height:8px;background:#111;border-radius:50%;animation:pulse 2s infinite}@keyframes pulse{50%{opacity:.25}}
+    .toolbar{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(243,243,241,.94);backdrop-filter:blur(12px);z-index:5}
+    .filters{display:flex;gap:8px;overflow:auto;padding-bottom:2px}.filter{border:1px solid var(--line);background:transparent;border-radius:999px;padding:9px 15px;white-space:nowrap;cursor:pointer;color:#3b3b38}.filter:hover,.filter.active{background:#000;color:#fff;border-color:#000}
+    .count{font-size:.8rem;color:var(--muted);white-space:nowrap}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1px;background:var(--line);border-bottom:1px solid var(--line)}
+    article{grid-column:span 6;background:var(--bg);padding:34px;min-height:390px;display:flex;flex-direction:column;transition:background .25s}article:hover{background:var(--paper)}article.feature{grid-column:span 12;min-height:470px;display:grid;grid-template-columns:1fr 1fr;gap:56px}
+    .eyebrow{display:flex;align-items:center;justify-content:space-between;gap:18px;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:52px}.verified{display:inline-flex;align-items:center;gap:6px;color:#111}.verified:before{content:"✓";width:18px;height:18px;border:1px solid #111;border-radius:50%;display:grid;place-items:center;font-size:.66rem}
+    h2{font-family:Georgia,"Songti SC",serif;font-size:clamp(1.9rem,3vw,3.8rem);line-height:1.05;letter-spacing:-.035em;margin:0 0 26px;font-weight:500}article:not(.feature) h2{font-size:clamp(1.65rem,2.3vw,2.5rem)}
+    .dek{font-size:1rem;line-height:1.75;color:#3d3d39;margin:0;max-width:68ch}.details{margin-top:auto;padding-top:32px}.context{font-size:.88rem;line-height:1.6;color:var(--muted);border-top:1px solid var(--line);padding-top:17px}.source{display:inline-flex;align-items:center;gap:9px;margin-top:20px;font-size:.83rem;text-decoration:none;border-bottom:1px solid #111;padding-bottom:3px}.source:hover{opacity:.5}.num{font-size:clamp(4rem,8vw,7rem);line-height:.8;letter-spacing:-.08em;font-weight:700;align-self:end;text-align:right;color:#d0d0cb}
+    footer{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding-top:46px}.method{font-size:.92rem;line-height:1.7;max-width:65ch}.method strong{display:block;font-size:.75rem;letter-spacing:.13em;text-transform:uppercase;margin-bottom:10px}.stamp{text-align:right;color:var(--muted);font-size:.8rem;line-height:1.8}
+    .hidden{display:none!important}
+    @media(max-width:820px){.shell{padding:0 18px 44px}header{height:70px}.header-meta{display:none}.masthead{grid-template-columns:1fr;padding:48px 0 38px;gap:34px}h1{font-size:clamp(3.8rem,21vw,6.5rem)}.toolbar{align-items:flex-start;flex-direction:column;gap:12px}.count{order:-1}.grid{display:block;background:transparent}article,article.feature{display:flex;min-height:0;padding:30px 0;border-bottom:1px solid var(--line)}.eyebrow{margin-bottom:34px}.num{display:none}footer{grid-template-columns:1fr}.stamp{text-align:left}}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header><div class="brand"><span class="mark"></span>AI SIGNAL</div><div class="header-meta">Independent Intelligence Brief / CN</div></header>
+    <section class="masthead">
+      <h1>SIGNAL<span class="cn">人工智能资讯雷达</span></h1>
+      <div class="intro"><p>从全球公开渠道中筛选真正重要的动态。去除噪音，核验原始来源，只留下值得关注的信号。</p><div class="status"><span class="pulse"></span>本期已完成一手来源核验</div></div>
+    </section>
+    <nav class="toolbar" aria-label="资讯筛选">
+      <div class="filters">
+        <button class="filter active" data-filter="all">全部</button><button class="filter" data-filter="OpenAI">OpenAI</button><button class="filter" data-filter="Google">Google</button><button class="filter" data-filter="Microsoft">Microsoft</button><button class="filter" data-filter="Anthropic">Anthropic</button><button class="filter" data-filter="中国">中国动态</button>
+      </div><div class="count"><span id="visible-count">8</span> 条重点资讯 · 更新于 2026.10.03</div>
+    </nav>
+    <section class="grid" id="news-grid">
+      <article class="feature" data-org="Anthropic"><div><div class="eyebrow"><span>2026.10.01 · Anthropic</span><span class="verified">官方核验</span></div><h2>Barclays 扩大 Claude 部署，金融业 AI 进入规模化运营阶段</h2><p class="dek">Anthropic 宣布 Barclays 将扩大 Claude 在内部运营和客户体验中的应用。信号不只在于一次企业合作，而是前沿模型正从试点走向受监管行业的核心工作流。</p><div class="details"><p class="context"><b>背景：</b>金融机构对数据安全、审计和流程治理要求极高，大规模采用通常意味着技术与合规体系已越过早期验证阶段。</p><a class="source" href="https://www.anthropic.com/news" target="_blank" rel="noreferrer">来源：Anthropic Newsroom ↗</a></div></div><div class="num">01</div></article>
+      <article data-org="Anthropic"><div class="eyebrow"><span>2026.09.28 · Anthropic</span><span class="verified">官方核验</span></div><h2>Claude Sonnet 5.5 发布：速度提升 30%+</h2><p class="dek">Sonnet 5.5 面向日常任务、修复代码与文档制作，相比 Sonnet 5 运行速度提高 30% 以上，多数工作成本最高降低 30%。</p><div class="details"><p class="context"><b>背景：</b>模型竞争的焦点正从“最高能力”扩展到速度、成本与可控推理强度的综合效率。</p><a class="source" href="https://www.anthropic.com/claude-sonnet-5-5" target="_blank" rel="noreferrer">来源：Anthropic 官方发布 ↗</a></div></article>
+      <article data-org="Microsoft"><div class="eyebrow"><span>2026.09.25 · Microsoft</span><span class="verified">官方核验</span></div><h2>Copilot 增加 Home、Code 与 Autopilot</h2><p class="dek">微软重构 Copilot：Home 统一办公入口，Code 用自然语言构建解决方案，Autopilot 则作为可持续运行的个人智能体处理长期任务。</p><div class="details"><p class="context"><b>背景：</b>企业 AI 正由问答助手转向可委派、可持续运行、受 IT 治理的工作代理。</p><a class="source" href="https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/" target="_blank" rel="noreferrer">来源：Microsoft 官方博客 ↗</a></div></article>
+      <article data-org="Anthropic"><div class="eyebrow"><span>2026.09.23 · Anthropic</span><span class="verified">官方核验</span></div><h2>Claude 发现具有 CRISPR 特征的新型酶系统</h2><p class="dek">Anthropic 生命科学团队披露早期成果：Claude 在高层指导下分析 DNA 数据、提出假设，并通过实验室验证发现一种新型酶系统。</p><div class="details"><p class="context"><b>背景：</b>这是通用模型参与“数据—假设—实验”闭环的案例，显示 AI 科研正从辅助检索迈向可验证的发现流程。</p><a class="source" href="https://www.anthropic.com/news/claude-discovers-novel-enzyme-system" target="_blank" rel="noreferrer">来源：Anthropic 官方研究 ↗</a></div></article>
+      <article data-org="中国"><div class="eyebrow"><span>2026.09.20 · 百度</span><span class="verified">官方核验</span></div><h2>百度智能云推出 AgentOS 与 Cloud Skills 中心</h2><p class="dek">百度智能云 9 月产品更新上线 ASC、AgentOS 与 Cloud Skills 中心，重点指向更安全、更高效的云端 AI 应用构建与技能复用。</p><div class="details"><p class="context"><b>背景：</b>国内云厂商正在把模型能力封装为智能体运行环境、技能市场与安全治理基础设施。</p><a class="source" href="https://cloud.baidu.com/news/productNews" target="_blank" rel="noreferrer">来源：百度智能云官方 ↗</a></div></article>
+      <article data-org="Google"><div class="eyebrow"><span>2026.09.15 · Google</span><span class="verified">官方核验</span></div><h2>Google ATLAS 发布全球 AI 使用新数据</h2><p class="dek">Google 更新开放数据体验，并联合 MIT FutureTech 研究科学工作者的 AI 使用：受访科学家中近半每天使用 AI，平均每周节省接近 7 小时。</p><div class="details"><p class="context"><b>背景：</b>效率提升也带来新的验证瓶颈，AI 对科研产出的影响取决于实验和审查流程是否同步重构。</p><a class="source" href="https://blog.google/innovation-and-ai/technology/ai/ai-economy-atlas-september-2026/" target="_blank" rel="noreferrer">来源：Google 官方博客 ↗</a></div></article>
+      <article data-org="中国"><div class="eyebrow"><span>2026.09.16 · 百度</span><span class="verified">官方核验</span></div><h2>百度 Flex 端到端语音语言模型开启公测</h2><p class="dek">Flex 将实时语音理解与 Function Call 结合，目标是让语音交互从自然对话进一步转向“听懂并执行任务”。</p><div class="details"><p class="context"><b>背景：</b>语音模型的评价维度正在从音色与识别率，转向低延迟、多轮理解和工具调用的完整交互能力。</p><a class="source" href="https://ai.baidu.com/support/news?module=AIOfficialWeb&amp;tag=13" target="_blank" rel="noreferrer">来源：百度 AI 开放平台 ↗</a></div></article>
+      <article data-org="OpenAI"><div class="eyebrow"><span>2026.09.03 · OpenAI</span><span class="verified">官方核验</span></div><h2>GPT‑6 Astra 面向专业工作与计算机操作发布</h2><p class="dek">Astra 强化计算机操作、浏览、软件工程、科学与专业文档生产，并逐步向 ChatGPT 订阅用户和 API 开放。</p><div class="details"><p class="context"><b>背景：</b>模型从生成答案转向直接在软件环境中完成多步骤任务；同时，其网络安全能力达到 OpenAI 准备框架的 Critical 门槛。</p><a class="source" href="https://openai.com/index/gpt-6-astra/" target="_blank" rel="noreferrer">来源：OpenAI 官方发布 ↗</a></div></article>
+      <article data-org="中国"><div class="eyebrow"><span>2026.08.28 · 腾讯</span><span class="verified">官方核验</span></div><h2>腾讯开源 Hy4 preview，支持 1M 上下文</h2><p class="dek">Hy4 preview 采用 770B 总参数、49B 激活参数的稀疏架构，面向代码、办公与科研场景，并通过腾讯产品及云端 API 提供使用。</p><div class="details"><p class="context"><b>背景：</b>中国开源模型继续向超长上下文与生产力智能体方向推进，竞争延伸至端到端任务完成质量和调用成本。</p><a class="source" href="https://www.tencent.com/zh-cn/tencent-releases-and-open-sources-tencent-hy4-preview/" target="_blank" rel="noreferrer">来源：腾讯官方 ↗</a></div></article>
+    </section>
+    <footer><div class="method"><strong>核验方法</strong>仅收录可追溯至企业官网、官方博客或官方产品公告的信息。标题与摘要经过压缩重写；涉及性能、价格与发布日期的数字均以原始发布页为准。知乎、微博及微信公众号内容只有在能交叉核验到一手来源时才会进入精选。</div><div class="stamp">AI SIGNAL / ISSUE 001<br>筛选窗口：2026.08.28—2026.10.03<br>8 条已核验 · 0 条传闻</div></footer>
+  </main>
+  <script>
+    const buttons=[...document.querySelectorAll('.filter')],cards=[...document.querySelectorAll('article')],count=document.querySelector('#visible-count');
+    buttons.forEach(button=>button.addEventListener('click',()=>{buttons.forEach(b=>b.classList.remove('active'));button.classList.add('active');const value=button.dataset.filter;let visible=0;cards.forEach(card=>{const show=value==='all'||card.dataset.org===value;card.classList.toggle('hidden',!show);if(show)visible++});count.textContent=visible}));
+  </script>
+</body>
+</html>
+
